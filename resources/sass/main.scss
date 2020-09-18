@@ -1,0 +1,127 @@
+@import "variables";
+
+@font-face {
+    font-family: Slabo;
+    src: url(/fonts/Slabo27px-Regular.ttf);
+}
+
+body {
+    font-family: Slabo, serif;
+}
+.firstMainColor{
+    color: $firstMainColor !important;
+}
+.secondMainColor{
+    color: $secondMainColor !important;
+}
+.thirdMainColor{
+    color: $thirdMainColor !important;
+}
+.fourthMainColor{
+    color: $fourthMainColor !important;
+}
+.bg-firstMainColor{
+    background: $firstMainColor !important;
+}
+.bg-secondMainColor{
+    background: $secondMainColor !important;
+}
+.bg-thirdMainColor{
+    background: $thirdMainColor !important;
+}
+.bg-fourthMainColor{
+    background: $fourthMainColor !important;
+}
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+ul.m-menu {
+    text-align: right;
+    margin: 0;
+
+    & li {
+        display: inline-block;
+        margin: 0 5px;
+
+        & a {
+            text-decoration: none;
+            padding: 10px 20px;
+            display: flex;
+            font-size: 20px;
+            font-weight: bold;
+            color: $firstMainColor;
+            position: relative;
+
+        }
+
+        & a.hvr-underline-from-left:before {
+            height: 2px;
+            background: $secondMainColor;
+        }
+        & a.hvr-underline-from-left.active:before {
+            right: 0;
+        }
+    }
+}
+
+img.logo {
+    width: 160px;
+}
+.myInfo {
+    padding: 20% 0;
+    & p {
+        font-size: 50px;
+    }
+    & h1{
+        font-size: 70px;
+    }
+    & h3 {
+        font-size: 40px;
+    }
+}
+.positionHeader{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+html::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+@while $fontSize <= 40 {
+    .font-size-#{$fontSize} {
+        font-size: $fontSize + px;
+    }
+    $fontSize: $fontSize + 5;
+}
+@while $width <= 40 {
+    .width-#{$width} {
+        width: $width + px;
+    }
+    $width: $width + 5;
+}
+@while $height <= 40 {
+    .height-#{$height} {
+        height: $height + px;
+    }
+    $height: $height + 5;
+}
+
