@@ -58,7 +58,7 @@ ul.m-menu {
 
         & a.hvr-underline-from-left:before {
             height: 2px;
-            background: $secondMainColor;
+            background: $thirdMainColor;
         }
         & a.hvr-underline-from-left.active:before {
             right: 0;
@@ -106,7 +106,7 @@ html::-webkit-scrollbar-thumb
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
 }
-@while $fontSize <= 40 {
+@while $fontSize <= 100 {
     .font-size-#{$fontSize} {
         font-size: $fontSize + px;
     }

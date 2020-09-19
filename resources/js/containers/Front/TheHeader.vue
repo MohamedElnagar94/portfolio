@@ -6,7 +6,7 @@
                     <div class="row pt-3 pb-3">
                         <div class="col-md-4">
                             <div>
-                                <img class="img-fluid logo" width="160px" src="/images/logo.png" title="Mohamed Elnagar"
+                                <img class="img-fluid logo" width="160px" src="/images/logo3.png" title="Mohamed Elnagar"
                                      alt="Mohamed Elnagar">
                             </div>
                         </div>

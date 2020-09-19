@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58861bbe-6c3b-4bc4-b1e1-e5cd3f01af60" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo.psd" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logo.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunks/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunks/0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunks/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunks/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/containers/Front/TheFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/containers/Front/TheFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/containers/Front/TheHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/containers/Front/TheHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/containers/Front/TheSlider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/containers/Front/TheSlider.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/Front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Front/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +175,8 @@
       <workItem from="1599916346396" duration="20049000" />
       <workItem from="1600195083891" duration="5420000" />
       <workItem from="1600362001294" duration="86000" />
-      <workItem from="1600442626909" duration="20995000" />
+      <workItem from="1600442626909" duration="21765000" />
+      <workItem from="1600496708632" duration="30718000" />
     </task>
     <servers />
   </component>

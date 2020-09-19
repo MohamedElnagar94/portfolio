@@ -111,7 +111,7 @@ svg {
 }
 
 .elementor-shape .elementor-shape-fill {
-    fill: #34495E;
+    fill: #34495e;
     -webkit-transform-origin: center;
     -ms-transform-origin: center;
     transform-origin: center;

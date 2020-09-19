@@ -17639,15 +17639,15 @@ body {
 }
 
 .firstMainColor {
-  color: #34495E !important;
+  color: #34495e !important;
 }
 
 .secondMainColor {
-  color: #4CD196 !important;
+  color: #2ecc71 !important;
 }
 
 .thirdMainColor {
-  color: #18d681 !important;
+  color: #1abc9c !important;
 }
 
 .fourthMainColor {
@@ -17655,15 +17655,15 @@ body {
 }
 
 .bg-firstMainColor {
-  background: #34495E !important;
+  background: #34495e !important;
 }
 
 .bg-secondMainColor {
-  background: #4CD196 !important;
+  background: #2ecc71 !important;
 }
 
 .bg-thirdMainColor {
-  background: #18d681 !important;
+  background: #1abc9c !important;
 }
 
 .bg-fourthMainColor {
@@ -17695,13 +17695,13 @@ ul.m-menu li a {
   display: flex;
   font-size: 20px;
   font-weight: bold;
-  color: #34495E;
+  color: #34495e;
   position: relative;
 }
 
 ul.m-menu li a.hvr-underline-from-left:before {
   height: 2px;
-  background: #4CD196;
+  background: #1abc9c;
 }
 
 ul.m-menu li a.hvr-underline-from-left.active:before {
@@ -17782,6 +17782,54 @@ html::-webkit-scrollbar-thumb {
 
 .font-size-40 {
   font-size: 40px;
+}
+
+.font-size-45 {
+  font-size: 45px;
+}
+
+.font-size-50 {
+  font-size: 50px;
+}
+
+.font-size-55 {
+  font-size: 55px;
+}
+
+.font-size-60 {
+  font-size: 60px;
+}
+
+.font-size-65 {
+  font-size: 65px;
+}
+
+.font-size-70 {
+  font-size: 70px;
+}
+
+.font-size-75 {
+  font-size: 75px;
+}
+
+.font-size-80 {
+  font-size: 80px;
+}
+
+.font-size-85 {
+  font-size: 85px;
+}
+
+.font-size-90 {
+  font-size: 90px;
+}
+
+.font-size-95 {
+  font-size: 95px;
+}
+
+.font-size-100 {
+  font-size: 100px;
 }
 
 .width-5 {
