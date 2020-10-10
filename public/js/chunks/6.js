@@ -464,7 +464,15 @@ var render = function() {
                             index < 3
                               ? _c(
                                   "div",
-                                  { key: index, staticClass: "col-md-4" },
+                                  {
+                                    key: index,
+                                    staticClass: "col-lg-4",
+                                    class: [
+                                      index === 0 || index === 1
+                                        ? "col-md-6"
+                                        : "col-md-12"
+                                    ]
+                                  },
                                   [
                                     _c(
                                       "div",

@@ -4,10 +4,10 @@
         <section class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 img-about">
                         <img class="img-fluid" src="/images/mohamed.jpg" alt="">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-lg-6">
                         <div style="padding: 20px">
 <!--                            <h3 class="font-size-60 font-weight-bold firstMainColor">About Me</h3>-->
                             <p class="text-justify" style="font-size: 19px;color: #34495e;">
@@ -39,7 +39,7 @@
                                 </li>
                                 <li>
                                     <span>Address : </span>
-                                    <span>San Francisco CA 97987 USA</span>
+                                    <span>Egypt, Dakahlia, Sherbin</span>
                                 </li>
                                 <li>
                                     <span>Email : </span>

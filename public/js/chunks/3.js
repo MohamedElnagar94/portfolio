@@ -178,14 +178,14 @@ var staticRenderFns = [
     return _c("section", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6" }, [
+          _c("div", { staticClass: "col-md-6 img-about" }, [
             _c("img", {
               staticClass: "img-fluid",
               attrs: { src: "/images/mohamed.jpg", alt: "" }
             })
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-6" }, [
+          _c("div", { staticClass: "col-md-12 col-lg-6" }, [
             _c("div", { staticStyle: { padding: "20px" } }, [
               _c(
                 "p",
@@ -234,7 +234,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("span", [_vm._v("Address : ")]),
                   _vm._v(" "),
-                  _c("span", [_vm._v("San Francisco CA 97987 USA")])
+                  _c("span", [_vm._v("Egypt, Dakahlia, Sherbin")])
                 ]),
                 _vm._v(" "),
                 _c("li", [

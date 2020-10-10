@@ -575,6 +575,15 @@ div.m-offers {
     .serviceBody{
         margin: 0;
     }
+    .img-about{
+        display: none;
+    }
+    .m-personal-info{
+        font-size: 15px !important;
+    }
+    ul.m-personal-info li span:first-child {
+        width: 94px !important;
+    }
 }
 
 /*// Small devices (landscape phones, 576px and up)*/
@@ -703,6 +712,9 @@ div.m-offers {
     .footer-bottom{
         font-size: 17px;
     }
+    .img-about{
+        display: none;
+    }
 }
 
 /*// Medium devices (tablets, 768px and up)*/
@@ -768,6 +780,9 @@ div.m-offers {
     }
     .footer-bottom{
         font-size: 17px;
+    }
+    .img-about{
+        display: none;
     }
 }
 

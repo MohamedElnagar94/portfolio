@@ -89,7 +89,7 @@
                                 <h2 class="thirdMainColor font-size-45 mb-4 font-weight-bold">Skills</h2>
                                 <div class="row">
                                     <template v-for="(skill,index) in skills">
-                                        <div class="col-md-4" :key="index" v-if="index < 3">
+                                        <div class="col-lg-4" :class="[index === 0 || index === 1 ? 'col-md-6' : 'col-md-12']" :key="index" v-if="index < 3">
                                             <div class="circleProgressBar" style="padding: 20px">
                                                 <h4>{{ skill.title }}</h4>
                                                 <div class="text-center progressBarContent">
