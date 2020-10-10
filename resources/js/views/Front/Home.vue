@@ -4,7 +4,7 @@
         <section class="container-fluid bg-firstMainColor">
             <div class="container pb-5 pt-5">
                 <div class="row mb-3">
-                    <div class="text-center w-100 pt-5">
+                    <div class="text-center w-100 pt-5 serviceHeader">
                         <h4 class="text-uppercase thirdMainColor">{{ services.title }}</h4>
                         <p class="font-size-40 fourthMainColor text-uppercase font-weight-bold">
                             {{ services.paragraph[0] }}</p>
@@ -12,16 +12,19 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col-md-4" v-for="(service,index) in services.items" :key="index">
-                        <div style="padding: 40px 0;box-shadow: 0 0 6px -5px white;">
-                            <div class="mb-3 text-center">
-                                <div>
-                                    <img :width="service.imageWidth" class="img-fluid" :src="service.image" alt="">
+                    <div class="col-md-4 mb-3 position-relative" :class="{'mb-4' : service.margin === true}" v-for="(service,index) in services.items" :key="index">
+                        <div class="hoverAnimation">
+                            <div class="overlayServices"></div>
+                            <div class="position-relative">
+                                <div class="mb-3 text-center">
+                                    <div>
+                                        <img :width="service.imageWidth" class="img-fluid" :src="service.image" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text-center fourthMainColor">
-                                <h4 class="text-capitalize mb-3">{{ service.title }}</h4>
-                                <p style="padding: 0 40px;color: #b9b9b9">{{ service.paragraph }}</p>
+                                <div class="text-center">
+                                    <h4 class="text-capitalize mb-3 titleServices">{{ service.title }}</h4>
+                                    <p class="contentServices">{{ service.paragraph }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -29,8 +32,8 @@
             </div>
         </section>
         <section class="container-fluid bg-firstMainColor">
-            <div class="row mb-3">
-                <div class="text-center w-100 pt-5">
+            <div class="row m-0 mb-3">
+                <div class="text-center w-100 pt-5 works">
                     <h4 class="text-uppercase thirdMainColor">My Projects</h4>
                     <p class="font-size-40 fourthMainColor text-uppercase font-weight-bold">
                         Far far away, behind the word mountains</p>
@@ -47,13 +50,14 @@
                 </div>
             </div>
         </section>
-        <section class="container-fluid bg-firstMainColor">
-            <div class="container" style="padding: 380px 0 240px 0">
+        <section class="container-fluid bg-firstMainColor overflow-hidden">
+            <div class="container m-offers-container">
                 <div class="row">
-                    <div class="col-md-3" v-for="(count,index) in counter" :key="index">
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-sm-4 mb-md-4" v-for="(count,index) in counter" :key="index">
                         <div class="bg-thirdMainColor fourthMainColor text-center m-offers" :class="count.className">
                             <div class="m-offer-content">
-                                <i class="font-size-45 mb-2" style="color: rgba(52,73,94,.5)" :class="count.fontawesome"></i>
+                                <i class="font-size-45 mb-2" style="color: rgba(52,73,94,.5)"
+                                   :class="count.fontawesome"></i>
                                 <h2 class="font-size-55 font-weight-bold">{{ countNumber(count.number) }}</h2>
                                 <p class="text-capitalize font-size-20">{{ count.title }}</p>
                             </div>
@@ -62,28 +66,74 @@
                 </div>
             </div>
         </section>
-        <section class="container-fluid bg-freelance">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center fourthMainColor" style="padding: 120px 0;">
-                        <h2 class="font-size-55">I'm <span class="thirdMainColor">Available</span> for freelancing</h2>
-                        <p class="font-size-25"> “Creativity is intelligence having fun.”<br>— Albert Einstein</p>
-                        <button class="text-uppercase hire-me">Hire Me</button>
+        <section class="container-fluid bg-firstMainColor">
+            <div class="container testimonial-container" style="padding: 20px 0 50px 0">
+                <div class="row m-0 mb-3">
+                    <div class="text-center w-100 pt-5 testimonial-header">
+                        <h4 class="text-uppercase thirdMainColor">Testimonials</h4>
+                        <p class="font-size-40 fourthMainColor text-uppercase font-weight-bold">
+                            Some Positive Feedback That Encourage Us</p>
+                        <hr class="width-40 height-5 bg-thirdMainColor">
+                    </div>
+                </div>
+                <div class="row testimonials">
+                    <div class="col-6 col-md-2">
+                        <div
+                            class="h-100 text-center d-flex justify-content-center align-items-center fourthMainColor font-size-45">
+                            <i class="fa fa-angle-left" style="cursor: pointer" @mouseenter="stopInterval"
+                               @mouseleave="startInterval" @click="changeTestimonial('slideRight')"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="overflow-hidden position-relative testimonial-content"
+                             @mouseenter="stopInterval"
+                             @mouseleave="startInterval">
+                            <template v-for="(testimonial,index) in testimonials">
+                                <transition :name="action">
+                                    <div v-show="index === currentTestimonial" class="position-absolute p-5"
+                                         style="top:0;left: 0">
+                                        <div class="text-center" :key="index">
+                                            <img width="90px" class="img-fluid border-radius-50 mb-3"
+                                                 :src="testimonial.img" alt="">
+                                            <p class="fourthMainColor font-size-15">{{ testimonial.personName }}</p>
+                                        </div>
+                                        <div class="text-center testimonial-body">
+                                            <p class="fourthMainColor font-size-25">
+                                                <q> {{ testimonial.content }} </q>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </transition>
+                            </template>
+                            <div class="testimonial-items">
+                                <span @click="scrollTestimonial(index)" v-for="(circle,index) in testimonials.length"
+                                      :class="{'active':currentTestimonial === index}" :key="index"
+                                      style="cursor: pointer"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <div
+                            class="h-100 text-center d-flex justify-content-center align-items-center fourthMainColor font-size-45">
+                            <i class="fa fa-angle-right" style="cursor: pointer" @mouseenter="stopInterval"
+                               @mouseleave="startInterval" @click="changeTestimonial('slideLeft')"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <HireMe/>
     </div>
 </template>
 
 <script>
-import TheSlider from "../../containers/Front/TheSlider";
-
+import TheSlider from "@/containers/Front/TheSlider";
+import HireMe from "@/containers/Front/HireMe";
 export default {
     name: 'Home',
     components: {
         TheSlider,
+        HireMe
     },
     data() {
         return {
@@ -92,22 +142,25 @@ export default {
                 paragraph: ["What Service We Offer For You", "what we do ?"],
                 items: [
                     {
+                        margin:false,
                         title: "web design",
                         image: "/images/compass.svg",
                         imageWidth: 70,
-                        paragraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"
+                        paragraph: "We are expert in creating websites with performance and toil per the specific industry desideratum"
                     },
                     {
+                        margin:false,
                         title: "responsive website",
                         image: "/images/1831956.svg",
                         imageWidth: 70,
-                        paragraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"
+                        paragraph: "User’s conduct depends on responsive website,in screen size, platform & orientation of website"
                     },
                     {
+                        margin:false,
                         title: "web development",
                         image: "/images/s3.png",
                         imageWidth: 70,
-                        paragraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"
+                        paragraph: "MAAN has an adept team to make sure that your open source website is grabbing maximum user attention"
                     },
                 ],
             },
@@ -143,11 +196,46 @@ export default {
                     language: ['php', 'laravel', 'javascript', 'vuejs', 'css3', 'html5']
                 },
             ],
+            currentTestimonial: 0,
+            action: 'slideLeft',
+            interval: null,
+            stop: true,
+            testimonials: [
+                {
+                    id: 1,
+                    img: '/images/testimonial.png',
+                    personName: 'Mohamed Elnagar',
+                    content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
+                },
+                {
+                    id: 2,
+                    img: '/images/testimonial.png',
+                    personName: 'Ahmed Elnagar',
+                    content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
+                },
+                {
+                    id: 3,
+                    img: '/images/testimonial.png',
+                    personName: 'Abdo Elnagar',
+                    content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
+                },
+                {
+                    id: 4,
+                    img: '/images/testimonial.png',
+                    personName: 'Sabry Elnagar',
+                    content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
+                },
+            ],
             counter: [
-                {fontawesome:"fa fa-tasks",className:"m-offer-first-item",number:"8",title:"Competed Projects"},
-                {fontawesome:"fa fa-smile-o",className:"m-offer-second-item",number:"32",title:"Happy clients"},
-                {fontawesome:"fa fa-history",className:"m-offer-third-item",number:"3",title:"years of experienced"},
-                {fontawesome:"fa fa-clock-o",className:"m-offer-fourth-item",number:"4500",title:"Hours Worked"},
+                {fontawesome: "fas fa-tasks", className: "m-offer-first-item", number: "8", title: "Competed Projects"},
+                {fontawesome: "far fa-grin-hearts", className: "m-offer-second-item", number: "32", title: "Happy clients"},
+                {
+                    fontawesome: "fas fa-history",
+                    className: "m-offer-third-item",
+                    number: "3",
+                    title: "years of experienced"
+                },
+                {fontawesome: "far fa-clock", className: "m-offer-fourth-item", number: "4500", title: "Hours Worked"},
             ]
         }
     },
@@ -163,137 +251,117 @@ export default {
             })
             return newValue;
         },
-        countNumber:function (number){
-            if(number > 1000){
+        stopInterval: function () {
+            clearInterval(this.interval)
+        },
+        startInterval: function () {
+            this.intervalTestimonial()
+        },
+        scrollTestimonial: function (index) {
+            if (this.stop === true){
+                this.currentTestimonial = index
+                this.stop = false
+                setTimeout(() => {
+                    this.stop = true
+                },1000)
+            }
+        },
+        changeTestimonial: function (key) {
+            if (this.stop === true){
+                this.action = key
+                if (key === 'slideRight') {
+                    if (this.currentTestimonial > 0) {
+                        this.currentTestimonial--;
+                    } else {
+                        this.currentTestimonial = this.testimonials.length - 1;
+                    }
+                }
+                if (key === 'slideLeft') {
+                    if (this.currentTestimonial < this.testimonials.length - 1) {
+                        this.currentTestimonial++;
+                    } else {
+                        this.currentTestimonial = 0;
+                    }
+                }
+                this.stop = false
+                setTimeout(() => {
+                    this.stop = true
+                },1000)
+            }
+        },
+        countNumber: function (number) {
+            if (number > 1000) {
                 return (number / 1000).toFixed(0) + 'k+';
-            }else {
+            } else {
                 return number;
             }
+        },
+        intervalTestimonial: function () {
+            this.interval = setInterval(() => {
+                if (this.currentTestimonial < this.testimonials.length - 1) {
+                    this.currentTestimonial++;
+                } else {
+                    this.currentTestimonial = 0;
+                }
+            }, 5000)
         }
     },
     mounted() {
 
+    },
+    created() {
+        this.intervalTestimonial()
     }
 }
 </script>
 
 <style scoped>
-/**/
-div.m-offers {
-    transform: rotate(45deg);
-    height: 260px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.slideLeft-leave-active,
+.slideLeft-enter-active,
+.slideRight-leave-active,
+.slideRight-enter-active {
+    transition: 1s;
 }
-div.m-offers div.m-offer-content {
-    transform: rotate(-45deg);
+
+.slideLeft-enter {
+    transform: translate(100%, 0);
 }
-div.m-offers::before {
+
+.slideRight-enter {
+    transform: translate(-100%, 0);
+}
+
+.slideLeft-leave-to {
+    transform: translate(-100%, 0);
+}
+
+.slideRight-leave-to {
+    transform: translate(100%, 0);
+}
+
+.testimonial-items {
     position: absolute;
-    left: -1px;
-    bottom: -2px;
-    height: 635px;
-    width: 636px;
-    border-left: 1px solid white;
-    border-top: 1px solid white;
-    content: "";
-    z-index: -1;
-}
-div.m-offers.m-offer-first-item::before {
-    left: 0px;
-    bottom: 38px;
-}
-div.m-offers.m-offer-second-item{
-    margin-top: -185px
-}
-div.m-offers.m-offer-second-item::before {
-    left: -298px;
-    bottom: -78px;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
-    border-left: none;
-    border-top: none;
-}
-div.m-offers.m-offer-third-item::before {
-    left: -76px;
-    bottom: -297px;
-}
-div.m-offers.m-offer-fourth-item{
-    margin-top: -185px
-}
-div.m-offers.m-offer-fourth-item::before {
-    left: -374px;
-    bottom: -413px;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
-    border-left: none;
-    border-top: none;
-}
-/**/
-/**/
-.m-work {
-    height: 311px !important;
-    width: 33.3333%;
-    position: relative;
-    overflow: hidden;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-.m-work-title {
-    position: absolute;
-    bottom: -150px;
-    left: 0;
-    width: 100%;
-    text-align: left;
-    color: white;
-    padding: 20px;
-    transition: .5s linear;
-    background: rgba(0, 0, 0, 0.5);
-}
-.m-work:hover .m-work-title {
-    transition: .5s linear;
     bottom: 0;
-}
-/**/
-.bg-freelance{
-    background-image: url("/images/bg_freelance.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-}
-.bg-freelance .overlay{
-    position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(52,73,94,.5);
+    height: 47px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.hire-me{
-    padding: 10px 20px;
-    background: #1abc9c;
-    color: white;
-    border-radius: 20px;
-    outline: none;
+
+.testimonial-items span {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    margin: 0 5px;
 }
-.hire-me:hover{
-    box-shadow: 0 0 20px 0px #2ecc71;
+
+.testimonial-items span.active {
+    background: #2ecc71;
 }
-.hire-me:active{
-    box-shadow: 0 0 20px 0px #2ecc71;
-}
-.hire-me:focus{
-    box-shadow: 0 0 20px 0px #2ecc71;
-}
+
+
 </style>

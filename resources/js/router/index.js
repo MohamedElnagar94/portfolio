@@ -9,6 +9,10 @@ const TheContainer = () => import('../containers/Front/TheContainer')
 // Views Front
 const Home = () => import('../views/Front/Home.vue')
 const AboutUs = () => import('../views/Front/About.vue')
+const Resume = () => import('../views/Front/Resume.vue')
+const Services = () => import('../views/Front/Services.vue')
+const Projects = () => import('../views/Front/Projects.vue')
+const ContactUs = () => import('../views/Front/ContactUs.vue')
 
 const router =  new Router({
     mode: 'hash', // https://router.vuejs.org/api/#mode
@@ -17,6 +21,8 @@ const router =  new Router({
 })
 router.beforeEach((to, from, next)=>{
     store.state.showLoading = true
+    store.state.showNav = false
+    document.documentElement.style.overflow = 'auto'
     next()
 })
 router.afterEach((to, from)=>{
@@ -42,6 +48,26 @@ function configRoutes() {
                     path: '/about-us',
                     name: 'AboutUs',
                     component: AboutUs
+                },
+                {
+                    path: '/resume',
+                    name: 'Resume',
+                    component: Resume
+                },
+                {
+                    path: '/services',
+                    name: 'Services',
+                    component: Services
+                },
+                {
+                    path: '/projects',
+                    name: 'projects',
+                    component: Projects
+                },
+                {
+                    path: '/contact-us',
+                    name: 'ContactUs',
+                    component: ContactUs
                 },
             ]
         }

@@ -3,7 +3,7 @@ const mix = require('laravel-mix');
 mix.webpackConfig({
     resolve: {
         alias: {
-            "@": ".."
+            "@": "../.."
         }
     },
     output:{

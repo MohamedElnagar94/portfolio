@@ -1,10 +1,10 @@
 <template>
     <section class="container-fluid">
         <div class="row m-0">
-            <div class="bg-header">
+            <div class="bg-header" :style="{'height' : heightScreen() + 'px'}">
                 <div class="layer"></div>
-                <div class="container">
-                    <div class="row">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
                         <div class="col-md-12 text-center">
                             <div class="myInfo">
                                 <p class="thirdMainColor font-weight-bold">HI! I AM</p>
@@ -53,6 +53,9 @@ export default {
         randFun: function (minNum, maxNum) {
             return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
         },
+        heightScreen:function (){
+            return window.innerHeight;
+        },
     },
     mounted() {
 
@@ -61,9 +64,6 @@ export default {
 </script>
 
 <style scoped>
-.myInfo{
-    padding: 20% 0;
-}
 div .bg-header {
     background-image: url("/images/slider.jpg");
     background-repeat: no-repeat;

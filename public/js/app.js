@@ -58897,16 +58897,32 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); // Containers
 
 var TheContainer = function TheContainer() {
-  return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../containers/Front/TheContainer */ "./resources/js/containers/Front/TheContainer.vue"));
+  return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../containers/Front/TheContainer */ "./resources/js/containers/Front/TheContainer.vue"));
 }; // Views Front
 
 
 var Home = function Home() {
-  return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../views/Front/Home.vue */ "./resources/js/views/Front/Home.vue"));
+  return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../views/Front/Home.vue */ "./resources/js/views/Front/Home.vue"));
 };
 
 var AboutUs = function AboutUs() {
-  return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../views/Front/About.vue */ "./resources/js/views/Front/About.vue"));
+  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../views/Front/About.vue */ "./resources/js/views/Front/About.vue"));
+};
+
+var Resume = function Resume() {
+  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ../views/Front/Resume.vue */ "./resources/js/views/Front/Resume.vue"));
+};
+
+var Services = function Services() {
+  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ../views/Front/Services.vue */ "./resources/js/views/Front/Services.vue"));
+};
+
+var Projects = function Projects() {
+  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ../views/Front/Projects.vue */ "./resources/js/views/Front/Projects.vue"));
+};
+
+var ContactUs = function ContactUs() {
+  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ../views/Front/ContactUs.vue */ "./resources/js/views/Front/ContactUs.vue"));
 };
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -58921,6 +58937,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 });
 router.beforeEach(function (to, from, next) {
   _store_index__WEBPACK_IMPORTED_MODULE_2__["default"].state.showLoading = true;
+  _store_index__WEBPACK_IMPORTED_MODULE_2__["default"].state.showNav = false;
+  document.documentElement.style.overflow = 'auto';
   next();
 });
 router.afterEach(function (to, from) {
@@ -58944,6 +58962,22 @@ function configRoutes() {
       path: '/about-us',
       name: 'AboutUs',
       component: AboutUs
+    }, {
+      path: '/resume',
+      name: 'Resume',
+      component: Resume
+    }, {
+      path: '/services',
+      name: 'Services',
+      component: Services
+    }, {
+      path: '/projects',
+      name: 'projects',
+      component: Projects
+    }, {
+      path: '/contact-us',
+      name: 'ContactUs',
+      component: ContactUs
     }]
   }];
 }
@@ -58968,7 +59002,8 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var state = {
-  showLoading: false
+  showLoading: false,
+  showNav: false
 };
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: state
