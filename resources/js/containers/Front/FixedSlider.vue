@@ -1,5 +1,5 @@
 <template>
-    <section class="container-fluid m-aboutMe" :style="{'height' : heightScreen() + 'px'}">
+    <section class="container-fluid m-aboutMe" :style="{'height' : innerHeight + 'px'}">
         <div class="overlay"></div>
         <div class="container h-100">
             <div class="row h-100 align-items-center text-center">
@@ -49,13 +49,16 @@ export default {
     },
     data(){
         return{
-
+            innerHeight:window.innerHeight,
         }
     },
     methods:{
         heightScreen:function (){
-            return window.innerHeight;
-        }
+            return this.innerHeight = window.innerHeight;
+        },
+    },
+    created() {
+        window.onresize = this.heightScreen
     }
 }
 </script>
@@ -70,6 +73,7 @@ export default {
     /*height: 435px;*/
     background-attachment: fixed;
     position: relative;
+    transition: all .5s linear;
 }
 .overlay{
     position: absolute;

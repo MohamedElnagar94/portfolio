@@ -58,12 +58,17 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   data: function data() {
-    return {};
+    return {
+      innerHeight: window.innerHeight
+    };
   },
   methods: {
     heightScreen: function heightScreen() {
-      return window.innerHeight;
+      return this.innerHeight = window.innerHeight;
     }
+  },
+  created: function created() {
+    window.onresize = this.heightScreen;
   }
 });
 
@@ -111,7 +116,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.m-aboutMe[data-v-663d6c10]{\n    /*background: linear-gradient(90deg, rgba(52,73,94,0.3816877092633929) 50%, rgba(255,255,255,1) 50%);*/\n    background-image: url(\"/images/natural.jpg\");\n    background-size: cover;\n    background-position: center center;\n    background-repeat: no-repeat;\n    /*height: 435px;*/\n    background-attachment: fixed;\n    position: relative;\n}\n.overlay[data-v-663d6c10]{\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: rgb(255 255 255 / 72%);\n}\n.elementor-shape[data-v-663d6c10] {\n    overflow: hidden;\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    width: 100%;\n    line-height: 0;\n    direction: ltr;\n}\n.elementor-shape svg[data-v-663d6c10] {\n    display: block;\n    width: calc(100% + 1.3px);\n    position: relative;\n    left: 50%;\n    transform: translateX(-50%);\n}\nsvg[data-v-663d6c10] {\n    width: calc(100% + 1.3px);\n    height: 128px;\n}\n.elementor-shape .elementor-shape-fill[data-v-663d6c10] {\n    fill: #34495e;\n    transform-origin: center;\n    transform: rotateY(0deg);\n}\n.elementor-shape[data-negative=false].elementor-shape-bottom[data-v-663d6c10], .elementor-shape[data-negative=true].elementor-shape-top[data-v-663d6c10] {\n    transform: rotate(180deg);\n}\n", ""]);
+exports.push([module.i, "\n.m-aboutMe[data-v-663d6c10]{\n    /*background: linear-gradient(90deg, rgba(52,73,94,0.3816877092633929) 50%, rgba(255,255,255,1) 50%);*/\n    background-image: url(\"/images/natural.jpg\");\n    background-size: cover;\n    background-position: center center;\n    background-repeat: no-repeat;\n    /*height: 435px;*/\n    background-attachment: fixed;\n    position: relative;\n    transition: all .5s linear;\n}\n.overlay[data-v-663d6c10]{\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: rgb(255 255 255 / 72%);\n}\n.elementor-shape[data-v-663d6c10] {\n    overflow: hidden;\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    width: 100%;\n    line-height: 0;\n    direction: ltr;\n}\n.elementor-shape svg[data-v-663d6c10] {\n    display: block;\n    width: calc(100% + 1.3px);\n    position: relative;\n    left: 50%;\n    transform: translateX(-50%);\n}\nsvg[data-v-663d6c10] {\n    width: calc(100% + 1.3px);\n    height: 128px;\n}\n.elementor-shape .elementor-shape-fill[data-v-663d6c10] {\n    fill: #34495e;\n    transform-origin: center;\n    transform: rotateY(0deg);\n}\n.elementor-shape[data-negative=false].elementor-shape-bottom[data-v-663d6c10], .elementor-shape[data-negative=true].elementor-shape-top[data-v-663d6c10] {\n    transform: rotate(180deg);\n}\n", ""]);
 
 // exports
 
@@ -216,7 +221,7 @@ var render = function() {
     "section",
     {
       staticClass: "container-fluid m-aboutMe",
-      style: { height: _vm.heightScreen() + "px" }
+      style: { height: _vm.innerHeight + "px" }
     },
     [
       _c("div", { staticClass: "overlay" }),

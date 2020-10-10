@@ -85,17 +85,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "TheSlider",
   data: function data() {
-    return {};
+    return {
+      innerHeight: window.innerHeight
+    };
   },
   methods: {
     randFun: function randFun(minNum, maxNum) {
       return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
     },
     heightScreen: function heightScreen() {
-      return window.innerHeight;
+      return this.innerHeight = window.innerHeight;
     }
   },
-  mounted: function mounted() {}
+  created: function created() {
+    window.onresize = this.heightScreen;
+  }
 });
 
 /***/ }),
@@ -671,7 +675,7 @@ var render = function() {
         "div",
         {
           staticClass: "bg-header",
-          style: { height: _vm.heightScreen() + "px" }
+          style: { height: this.innerHeight + "px" }
         },
         [
           _c("div", { staticClass: "layer" }),
@@ -785,7 +789,8 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-md-12 text-center" }, [
           _c("div", { staticClass: "myInfo" }, [
             _c("p", { staticClass: "thirdMainColor font-weight-bold" }, [
-              _vm._v("HI! I AM")
+              _c("span", { staticClass: "firstMainColor" }, [_vm._v("HEY")]),
+              _vm._v("! I AM")
             ]),
             _vm._v(" "),
             _c("h1", { staticClass: "firstMainColor font-weight-bold" }, [

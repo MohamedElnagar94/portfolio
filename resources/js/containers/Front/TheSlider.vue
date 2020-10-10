@@ -1,13 +1,13 @@
 <template>
     <section class="container-fluid">
         <div class="row m-0">
-            <div class="bg-header" :style="{'height' : heightScreen() + 'px'}">
+            <div class="bg-header" :style="{'height' : this.innerHeight + 'px'}">
                 <div class="layer"></div>
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-md-12 text-center">
                             <div class="myInfo">
-                                <p class="thirdMainColor font-weight-bold">HI! I AM</p>
+                                <p class="thirdMainColor font-weight-bold"><span class="firstMainColor">HEY</span>! I AM</p>
                                 <h1 class="firstMainColor font-weight-bold">Mohamed Elnagar</h1>
                                 <h3 class="font-weight-bold"><span class="firstMainColor">I'm a</span> <span class="thirdMainColor">Full Stack Developer</span></h3>
                             </div>
@@ -46,7 +46,7 @@ export default {
     name: "TheSlider",
     data() {
         return {
-
+            innerHeight:window.innerHeight,
         }
     },
     methods: {
@@ -54,11 +54,11 @@ export default {
             return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
         },
         heightScreen:function (){
-            return window.innerHeight;
+            return this.innerHeight = window.innerHeight;
         },
     },
-    mounted() {
-
+    created() {
+        window.onresize = this.heightScreen
     }
 }
 </script>

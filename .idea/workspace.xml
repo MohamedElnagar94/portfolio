@@ -4,10 +4,8 @@
     <list default="true" id="58861bbe-6c3b-4bc4-b1e1-e5cd3f01af60" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunks/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunks/3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/chunks/6.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunks/6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/Front/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Front/About.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/Front/Resume.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Front/Resume.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chunks/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chunks/2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/containers/Front/TheSlider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/containers/Front/TheSlider.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,6 +148,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
@@ -189,7 +188,7 @@
       <workItem from="1602229629406" duration="42000" />
       <workItem from="1602230909200" duration="109000" />
       <workItem from="1602231036109" duration="37799000" />
-      <workItem from="1602314936173" duration="37405000" />
+      <workItem from="1602314936173" duration="40484000" />
     </task>
     <servers />
   </component>
